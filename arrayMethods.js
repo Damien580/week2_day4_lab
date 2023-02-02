@@ -59,11 +59,10 @@ const populations = [8175133, 3792621, 2695598, 2100263];
 */
 
 // CODE HERE
-const totalPopulation = populations.reduce(function(sum,num) {
+const totalPopulation = populations.reduce((sum,num) => {
   const updatedPop = sum + num;
   return updatedPop
 }, 0)
-
 
 console.log(totalPopulation)
 
@@ -91,9 +90,8 @@ const monstersInYourPocket = [{"monster":"Bulbabunny","CP":156},{"monster":"Bulb
 */
 
 // CODE HERE
-// const myStrongest // = monstersInYourPocket.filter(/* Provide Your Callback Here */)
-
-
+const myStrongest = monstersInYourPocket.filter(monstersInYourPocket => monstersInYourPocket.CP > 200)
+console.log(myStrongest)
 
 ////////// PROBLEM 5 //////////
 
@@ -109,8 +107,8 @@ const orders = [{"price":15,"tax":0.09},{"price":42,"tax":0.07},{"price":56,"tax
 */
 
 // CODE HERE
-
-
+const newTotals = orders.map(orders => orders.price + (orders.price * orders.tax))
+console.log(newTotals)
 
 ////////// PROBLEM 6 //////////
 
@@ -126,6 +124,9 @@ const purchases = [{"owner":"Barry","price":103},{"owner":"Bob","price":75},
 
 /*
   Use a high order method(s) to get the sum of bobsTotal.
-*/
-
-// CODE HERE
+  /*
+  
+ 
+// CODE HERE*/
+const bobsTotal = purchases.filter(purchases => purchases.owner === 'Bob').reduce((total, purchases) => total + purchases.price, 0) 
+console.log('Bob\'s Total:', bobsTotal)
